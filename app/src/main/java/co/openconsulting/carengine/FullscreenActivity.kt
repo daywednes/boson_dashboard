@@ -43,18 +43,13 @@ class FullscreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        supportActionBar?.hide()
+
         setContentView(R.layout.activity_fullscreen)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         mVisible = true
 
-        // Set up the user interaction to manually show or hide the system UI.
-//        fullscreen_content.setOnClickListener { toggle() }
-
-        // Upon interacting with UI controls, delay any scheduled hide()
-        // operations to prevent the jarring behavior of controls going away
-        // while interacting with the UI.
-//        dummy_button.setOnTouchListener(mDelayHideTouchListener)
         updateHandler = Handler()
         updateHandler.postDelayed({
             updateUI()
@@ -146,7 +141,6 @@ class FullscreenActivity : AppCompatActivity() {
 
     private fun hide() {
         // Hide UI first
-        supportActionBar?.hide()
 //        fullscreen_content_controls.visibility = View.GONE
         mVisible = false
 
