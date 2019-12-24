@@ -12,12 +12,13 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+        supportActionBar?.hide()
+        actionBar?.hide()
 
         myHandler = Handler()
         myHandler.postDelayed({
             goToMainActivity()
         }, splashTime)
-
     }
 
     private fun goToMainActivity() {
