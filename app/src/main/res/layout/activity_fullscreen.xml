@@ -29,14 +29,17 @@
             android:layout_marginEnd="210dp"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true">
+
             <ImageView
                 android:id="@+id/rocketImage"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="25dp"
                 android:contentDescription="@string/chicken"
-                android:layout_centerInParent="true"
                 android:src="@drawable/ic_rocket" />
+
             <TextView
                 android:id="@+id/rocketTempTextView"
                 android:layout_width="wrap_content"
@@ -61,14 +64,15 @@
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:contentDescription="@string/chicken"
+                android:layout_marginBottom="5dp"
                 android:src="@drawable/ic_chicken" />
 
             <TextView
                 android:id="@+id/chickenTempTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#fff"
-                android:text="122℃" />
+                android:text="122℃"
+                android:textColor="#fff" />
         </LinearLayout>
 
 
@@ -163,8 +167,8 @@
 
         <LinearLayout
             android:id="@+id/bottomStack"
-            android:layout_width="312dp"
-            android:layout_height="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="bottom"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
