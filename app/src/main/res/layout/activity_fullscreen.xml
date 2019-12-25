@@ -101,8 +101,8 @@
 
             <ImageView
                 android:id="@+id/powerConsumptionImageView"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:contentDescription="@string/chicken"
                 android:layout_centerInParent="true"
                 android:src="@drawable/ic_power_consumption" />
@@ -119,8 +119,17 @@
 
         <RelativeLayout
             android:layout_centerInParent="true"
-            android:layout_width="300dp"
-            android:layout_height="300dp">
+            android:layout_width="500dp"
+            android:layout_height="350dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:text="BALANCED" />
 
             <TextView
                 android:id="@+id/kmLeftTextView"
@@ -139,9 +148,48 @@
                 android:textSize="20dp"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:text="KmLeft" />
+                android:text="km/h" />
 
         </RelativeLayout>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:paddingBottom="150dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:paddingRight="5dp"
+                android:text="Odo" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:text="12,534 km" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:paddingRight="5dp"
+                android:text="Trip A" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:text="72.7 km" />
+        </GridLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
