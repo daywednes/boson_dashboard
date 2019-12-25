@@ -75,15 +75,22 @@
                 android:textColor="#fff" />
         </LinearLayout>
 
-
         <ImageView
             android:id="@+id/topLineImageView"
-            android:layout_width="800dp"
-            android:layout_height="800dp"
-            android:contentDescription="@string/chicken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
             android:src="@drawable/ic_top_line" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ic_bottom_line" />
 
         <ImageView
             android:id="@+id/centerLineImageView"
@@ -137,6 +144,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:textColor="#fff"
+                android:fontFamily="@font/simplifica"
                 android:textSize="200dp"
                 android:text="00" />
 
@@ -196,6 +204,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
             >
             <TextView
                 android:id="@+id/currentTemp"
@@ -203,13 +212,13 @@
                 android:layout_height="wrap_content"
                 android:textColor="#fff"
                 android:layout_marginEnd="10dp"
-                android:text="10" />
+                android:text="10 ℃" />
             <TextView
                 android:id="@+id/dateTimeTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#fff"
-                android:text="Datetime" />
+                android:text="12:24 PM" />
         </LinearLayout>
 
 
@@ -225,44 +234,44 @@
 
             <ImageView
                 android:id="@+id/bottom1"
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:layout_marginEnd="10dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="14dp"
                 android:src="@drawable/ic_bottom_1" />
 
             <ImageView
                 android:id="@+id/bottom2"
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:layout_marginEnd="10dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="14dp"
                 android:src="@drawable/ic_bottom_2" />
 
             <ImageView
                 android:id="@+id/bottom3"
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:layout_marginEnd="10dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="14dp"
                 android:src="@drawable/ic_bottom_3" />
 
             <ImageView
                 android:id="@+id/bottom4"
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:layout_marginEnd="10dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="14dp"
                 android:src="@drawable/ic_bottom_4" />
 
             <ImageView
                 android:id="@+id/bottom5"
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:layout_marginEnd="10dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="14dp"
                 android:src="@drawable/ic_bottom_5" />
 
             <ImageView
                 android:id="@+id/bottom6"
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:layout_marginEnd="10dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="14dp"
                 android:src="@drawable/ic_bottom_6" />
         </LinearLayout>
 
