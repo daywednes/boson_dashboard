@@ -24,9 +24,9 @@
         <RelativeLayout
             android:orientation="vertical"
             android:id="@+id/layout2"
-            android:layout_width="32dp"
+            android:layout_width="50dp"
             android:layout_height="330dp"
-            android:layout_marginEnd="210dp"
+            android:layout_marginEnd="200dp"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true">
 
