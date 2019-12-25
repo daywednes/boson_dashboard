@@ -43,9 +43,9 @@ class FullscreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        supportActionBar?.hide()
-
         setContentView(R.layout.activity_fullscreen)
+
+        supportActionBar?.hide()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         mVisible = true
@@ -97,26 +97,30 @@ class FullscreenActivity : AppCompatActivity() {
         return currentBatteryTemp > 80
     }
 
+    private fun tempText(temp : Int) : String {
+        return "$temp ℃"
+    }
+
     private fun updateUI() {
         if (isMotorIcon()) {
-            chickenImage.setImageResource(R.drawable.ic_power_consumption)
+            chickenImageView.setImageResource(R.drawable.ic_power_consumption)
         } else {
-            chickenImage.setImageResource(R.drawable.ic_chicken)
+            chickenImageView.setImageResource(R.drawable.ic_chicken)
         }
 
         if (isBatteryIcon()) {
             // TODO: Update with battery icon
-            rocketImage.setImageResource(R.drawable.ic_rocket_simple)
+            rocketImage.setImageResource(R.drawable.ic_rocket)
         } else {
-            rocketImage.setImageResource(R.drawable.ic_rocket_simple)
+            rocketImage.setImageResource(R.drawable.ic_rocket)
         }
 
         // current kmLeft
-        kmLeftTextView.text = currentKmLeft.toString()
-        dateTimeTextView.text = dateToString(currentDateTime)
-        chickenTempTextView.text = currentMotorTemp.toString()
-        rocketTempTextView.text = currentBatteryTemp.toString()
-        powerConsumptionTextView.text = currentPowerConsumption.toString()
+//        kmLeftTextView.text = currentKmLeft.toString()
+//        dateTimeTextView.text = dateToString(currentDateTime)
+//        chickenTempTextView.text = currentMotorTemp.toString()
+//        rocketTempTextView.text = currentBatteryTemp.toString()
+//        powerConsumptionTextView.text = currentPowerConsumption.toString()
 
         // drawing
         drawLine()
@@ -131,14 +135,6 @@ class FullscreenActivity : AppCompatActivity() {
         delayedHide(100)
     }
 
-    private fun toggle() {
-        if (mVisible) {
-            hide()
-        } else {
-            show()
-        }
-    }
-
     private fun hide() {
         // Hide UI first
 //        fullscreen_content_controls.visibility = View.GONE
@@ -147,18 +143,6 @@ class FullscreenActivity : AppCompatActivity() {
         // Schedule a runnable to remove the status and navigation bar after a delay
         mHideHandler.removeCallbacks(mShowPart2Runnable)
         mHideHandler.postDelayed(mHidePart2Runnable, UI_ANIMATION_DELAY.toLong())
-    }
-
-    private fun show() {
-        // Show the system bar
-//        fullscreen_content.systemUiVisibility =
-//            View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
-//                    View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-        mVisible = true
-
-        // Schedule a runnable to display UI elements after a delay
-        mHideHandler.removeCallbacks(mHidePart2Runnable)
-        mHideHandler.postDelayed(mShowPart2Runnable, UI_ANIMATION_DELAY.toLong())
     }
 
     /**

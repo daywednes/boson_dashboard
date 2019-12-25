@@ -9,126 +9,211 @@
 
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
-    <AbsoluteLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#00000000"
         android:fitsSystemWindows="true">
 
-
         <ImageView
             android:id="@+id/drawingImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
             android:contentDescription="@string/chicken" />
 
+        <RelativeLayout
+            android:orientation="vertical"
+            android:id="@+id/layout2"
+            android:layout_width="32dp"
+            android:layout_height="330dp"
+            android:layout_marginEnd="210dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true">
+            <ImageView
+                android:id="@+id/rocketImage"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentBottom="true"
+                android:contentDescription="@string/chicken"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_rocket" />
+            <TextView
+                android:id="@+id/rocketTempTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="92℃" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/layout1"
+            android:layout_width="70dp"
+            android:layout_height="320dp"
+            android:layout_marginEnd="210dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_horizontal">
+            <ImageView
+                android:id="@+id/chickenImageView"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:contentDescription="@string/chicken"
+                android:src="@drawable/ic_chicken" />
+
+            <TextView
+                android:id="@+id/chickenTempTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:text="122℃" />
+        </LinearLayout>
+
+
         <ImageView
-            android:id="@+id/chickenImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_x="143dp"
-            android:layout_y="21dp"
+            android:id="@+id/topLineImageView"
+            android:layout_width="800dp"
+            android:layout_height="800dp"
             android:contentDescription="@string/chicken"
-            android:src="@drawable/ic_chicken" />
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/ic_top_line" />
 
         <ImageView
-            android:id="@+id/rocketImage"
+            android:id="@+id/centerLineImageView"
+            android:layout_width="800dp"
+            android:layout_height="800dp"
+            android:contentDescription="@string/chicken"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_center_line" />
+
+        <RelativeLayout
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="160dp">
+
+            <ImageView
+                android:id="@+id/powerConsumptionImageView"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:contentDescription="@string/chicken"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_power_consumption" />
+
+            <TextView
+                android:id="@+id/powerConsumptionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="+3.2kW"
+                android:textColor="#fff" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_centerInParent="true"
+            android:layout_width="300dp"
+            android:layout_height="300dp">
+
+            <TextView
+                android:id="@+id/kmLeftTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="#fff"
+                android:textSize="200dp"
+                android:text="00" />
+
+            <TextView
+                android:id="@+id/kmLeftText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="KmLeft" />
+
+        </RelativeLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="106dp"
-            android:layout_y="30dp"
-            android:src="@drawable/ic_rocket_simple"
-            android:contentDescription="@string/chicken" />
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            >
+            <TextView
+                android:id="@+id/currentTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:layout_marginEnd="10dp"
+                android:text="10" />
+            <TextView
+                android:id="@+id/dateTimeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:text="Datetime" />
+        </LinearLayout>
 
-        <ImageView
-            android:id="@+id/bottom1"
-            android:layout_width="46dp"
-            android:layout_height="37dp"
-            android:layout_x="40dp"
-            android:layout_y="304dp"
-            android:src="@drawable/ic_bottom_1" />
 
-        <ImageView
-            android:id="@+id/bottom2"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_x="245dp"
-            android:layout_y="330dp"
-            android:src="@drawable/ic_bottom_2" />
+        <LinearLayout
+            android:id="@+id/bottomStack"
+            android:layout_width="312dp"
+            android:layout_height="80dp"
+            android:gravity="bottom"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="10dp"
+            android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/bottom3"
-            android:layout_width="45dp"
-            android:layout_height="31dp"
-            android:layout_x="149dp"
-            android:layout_y="341dp"
-            android:src="@drawable/ic_bottom_3" />
+            <ImageView
+                android:id="@+id/bottom1"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_bottom_1" />
 
-        <ImageView
-            android:id="@+id/bottom4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_x="199dp"
-            android:layout_y="254dp"
-            android:src="@drawable/ic_bottom_4" />
+            <ImageView
+                android:id="@+id/bottom2"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_bottom_2" />
 
-        <ImageView
-            android:id="@+id/bottom5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_x="266dp"
-            android:layout_y="264dp"
-            android:src="@drawable/ic_bottom_5" />
+            <ImageView
+                android:id="@+id/bottom3"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_bottom_3" />
 
-        <ImageView
-            android:id="@+id/bottom6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_x="130dp"
-            android:layout_y="283dp"
-            android:src="@drawable/ic_bottom_6" />
+            <ImageView
+                android:id="@+id/bottom4"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_bottom_4" />
 
-        <TextView
-            android:id="@+id/kmLeftTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_x="392dp"
-            android:layout_y="226dp"
-            android:text="TextView" />
+            <ImageView
+                android:id="@+id/bottom5"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_bottom_5" />
 
-        <TextView
-            android:id="@+id/dateTimeTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_x="51dp"
-            android:layout_y="95dp"
-            android:text="TextView" />
+            <ImageView
+                android:id="@+id/bottom6"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_bottom_6" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/chickenTempTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_x="457dp"
-            android:layout_y="67dp"
-            android:text="TextView" />
-
-        <TextView
-            android:id="@+id/rocketTempTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_x="78dp"
-            android:layout_y="195dp"
-            android:text="TextView" />
-
-        <TextView
-            android:id="@+id/powerConsumptionTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_x="181dp"
-            android:layout_y="95dp"
-            android:text="TextView" />
-
-    </AbsoluteLayout>
+    </RelativeLayout>
 
 </FrameLayout>
