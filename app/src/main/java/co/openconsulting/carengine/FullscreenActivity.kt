@@ -47,7 +47,6 @@ class FullscreenActivity : AppCompatActivity() {
         }
 
         // TODO: Remove this
-        progressBar.progress = 50
 
         updateHandler = Handler()
         updateHandler.postDelayed({
@@ -74,6 +73,10 @@ class FullscreenActivity : AppCompatActivity() {
         currentPowerConsumption = 4.5
         fakeData1 = true
         changeBlackTheme(false)
+
+        kwProgressBar.progress = 50
+        chickenProgressBar.progress = 50
+        rocketProgressBar.progress = 50
     }
 
     private fun toggleFakeData2() {
@@ -83,6 +86,10 @@ class FullscreenActivity : AppCompatActivity() {
         currentPowerConsumption = -4.5
         fakeData1 = false
         changeBlackTheme(true)
+
+        kwProgressBar.progress = 100
+        chickenProgressBar.progress = 100
+        rocketProgressBar.progress = 100
     }
 
     private fun currentPowerConsumptionText(): String {
