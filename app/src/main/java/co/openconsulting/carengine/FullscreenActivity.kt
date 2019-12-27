@@ -46,6 +46,9 @@ class FullscreenActivity : AppCompatActivity() {
             toggleFakeData()
         }
 
+        // TODO: Remove this
+        progressBar.progress = 50
+
         updateHandler = Handler()
         updateHandler.postDelayed({
             updateUI()
