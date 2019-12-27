@@ -159,7 +159,7 @@ class FullscreenActivity : AppCompatActivity() {
         powerConsumptionTextView.text = currentPowerConsumptionText()
 
         // drawing
-        drawLine()
+//        drawLine()
     }
 
     private fun maybeChangeTheme(now: Calendar) {
@@ -198,8 +198,8 @@ class FullscreenActivity : AppCompatActivity() {
         OdoValueTextView.setTextColor(textColor)
         TripATextTextView.setTextColor(textColor)
         TripAValueTextView.setTextColor(textColor)
-        kmLeftText.setTextColor(textColor)
         balancedTextView.setTextColor(textColor)
+        kmLeftText.setTextColor(textColor)
 
         chickenImageView.setColorFilter(pathColor)
         powerConsumptionImageView.setColorFilter(pathColor)
