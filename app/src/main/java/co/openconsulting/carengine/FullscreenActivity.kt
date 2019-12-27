@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_fullscreen.*
+import kotlinx.android.synthetic.main.activity_splash.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -31,6 +32,7 @@ class FullscreenActivity : AppCompatActivity() {
 
     private lateinit var updateHandler : Handler
 
+    @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -38,7 +40,6 @@ class FullscreenActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
         // onClick set fakeData
         // This is for demo purpose only
         mainFrameLayout.setOnClickListener {
@@ -49,11 +50,6 @@ class FullscreenActivity : AppCompatActivity() {
         updateHandler.postDelayed({
             updateUI()
         }, updatePeriod)
-    }
-
-    // use this function to set data from outside.
-    public fun setData() {
-
     }
 
     private fun toggleFakeData() {
@@ -140,7 +136,7 @@ class FullscreenActivity : AppCompatActivity() {
     private fun updateUI() {
         // check current date time to change theme
         val now = Calendar.getInstance()
-        maybeChangeTheme(now)
+//        maybeChangeTheme(now)
 
         if (isMotorIcon()) {
             chickenImageView.setImageResource(R.drawable.ic_motor)
@@ -177,11 +173,29 @@ class FullscreenActivity : AppCompatActivity() {
     }
 
     private fun changeBlackTheme(blackTheme: Boolean) {
-        if (blackTheme) {
-//            setTheme(R.style.BlackTheme)
-        } else {
-            setTheme(R.style.WhiteTheme)
+        Log.d("color", blackTheme.toString());
+
+        var textColor = Color.WHITE
+        var pathColor = Color.WHITE
+
+        if (!blackTheme) {
+            textColor = Color.BLACK
+            pathColor = Color.BLACK
         }
+
+        chickenTempTextView.setTextColor(textColor)
+        rocketTempTextView.setTextColor(textColor)
+        dateTimeTextView.setTextColor(textColor)
+        kmLeftTextView.setTextColor(textColor)
+        powerConsumptionTextView.setTextColor(textColor)
+        OdoTextTextView.setTextColor(textColor)
+        OdoValueTextView.setTextColor(textColor)
+        TripATextTextView.setTextColor(textColor)
+        TripAValueTextView.setTextColor(textColor)
+
+        chickenImageView.setColorFilter(pathColor)
+        powerConsumptionImageView.setColorFilter(pathColor)
+        rocketImage.setColorFilter(pathColor)
     }
 
     companion object {
@@ -196,11 +210,5 @@ class FullscreenActivity : AppCompatActivity() {
          * user interaction before hiding the system UI.
          */
         private val AUTO_HIDE_DELAY_MILLIS = 3000
-
-        /**
-         * Some older devices needs a small delay between UI widget updates
-         * and a change of the status and navigation bar.
-         */
-        private val UI_ANIMATION_DELAY = 300
     }
 }

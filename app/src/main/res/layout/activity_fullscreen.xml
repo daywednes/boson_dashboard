@@ -170,6 +170,7 @@
             android:paddingBottom="150dp"
             >
             <TextView
+                android:id="@+id/OdoTextTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#fff"
@@ -178,6 +179,7 @@
                 android:paddingRight="5dp"
                 android:text="Odo" />
             <TextView
+                android:id="@+id/OdoValueTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#fff"
@@ -185,6 +187,7 @@
                 android:layout_column="1"
                 android:text="12,534 km" />
             <TextView
+                android:id="@+id/TripATextTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#fff"
@@ -193,6 +196,7 @@
                 android:paddingRight="5dp"
                 android:text="Trip A" />
             <TextView
+                android:id="@+id/TripAValueTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#fff"
