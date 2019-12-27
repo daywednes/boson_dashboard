@@ -57,8 +57,8 @@
         <ProgressBar
             android:id="@+id/kwProgressBar"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="1200dp"
-            android:layout_height="1200dp"
+            android:layout_width="1180dp"
+            android:layout_height="1180dp"
             android:max="470"
             android:progress="100"
             android:layout_centerInParent="true"
