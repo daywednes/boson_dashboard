@@ -1,6 +1,7 @@
 package co.openconsulting.carengine
 
 import android.annotation.SuppressLint
+import android.content.res.ColorStateList
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
@@ -124,17 +125,6 @@ class FullscreenActivity : AppCompatActivity() {
         return simpleDateFormat.format(date)
     }
 
-//    Chicken - Motor Temp - Range - [ 0C - 70C]  - Replace icon with motor icon
-//    Rocket - Battery Temp - Range [0C - 80C] - Replace with battery icon
-
-    private fun isMotorIcon() : Boolean {
-        return currentMotorTemp > 70
-    }
-
-    private fun isBatteryIcon() : Boolean {
-        return currentBatteryTemp > 80
-    }
-
     private fun tempText(temp : Int) : String {
         return "$temp ℃"
     }
@@ -148,28 +138,12 @@ class FullscreenActivity : AppCompatActivity() {
         val now = Calendar.getInstance()
 //        maybeChangeTheme(now)
 
-        if (isMotorIcon()) {
-            chickenImageView.setImageResource(R.drawable.ic_motor)
-        } else {
-            chickenImageView.setImageResource(R.drawable.ic_chicken)
-        }
-
-        if (isBatteryIcon()) {
-            rocketImage.setImageResource(R.drawable.ic_battery)
-        } else {
-            rocketImage.setImageResource(R.drawable.ic_rocket)
-        }
-
-
         // current kmLeft
         kmLeftTextView.text = currentKmLeft.toString()
 //        dateTimeTextView.text = dateToString(now)
         chickenTempTextView.text = tempText(currentMotorTemp)
         rocketTempTextView.text = tempText(currentBatteryTemp)
         powerConsumptionTextView.text = currentPowerConsumptionText()
-
-        // drawing
-//        drawLine()
     }
 
     private fun maybeChangeTheme(now: Calendar) {
@@ -215,6 +189,10 @@ class FullscreenActivity : AppCompatActivity() {
         chickenImageView.setColorFilter(pathColor)
         powerConsumptionImageView.setColorFilter(pathColor)
         rocketImage.setColorFilter(pathColor)
+
+        chickenProgressBar.progressTintList = ColorStateList.valueOf(pathColor)
+        rocketProgressBar.progressTintList = ColorStateList.valueOf(pathColor)
+        kwProgressBar.progressTintList = ColorStateList.valueOf(pathColor)
     }
 
     companion object {

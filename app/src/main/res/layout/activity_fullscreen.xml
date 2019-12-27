@@ -77,7 +77,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="25dp"
                 android:contentDescription="@string/chicken"
-                android:src="@drawable/ic_rocket" />
+                android:src="@drawable/ic_battery" />
 
             <TextView
                 android:id="@+id/rocketTempTextView"
@@ -104,7 +104,7 @@
                 android:layout_height="32dp"
                 android:contentDescription="@string/chicken"
                 android:layout_marginBottom="5dp"
-                android:src="@drawable/ic_chicken" />
+                android:src="@drawable/ic_motor" />
 
             <TextView
                 android:id="@+id/chickenTempTextView"
