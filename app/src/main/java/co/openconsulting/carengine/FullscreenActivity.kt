@@ -157,15 +157,15 @@ class FullscreenActivity : AppCompatActivity() {
     }
 
     private fun changeBlackTheme(blackTheme: Boolean) {
-        Log.d("color", blackTheme.toString());
-
         var textColor = Color.WHITE
         var pathColor = Color.WHITE
 
         if (blackTheme) {
             mainFrameLayout.setBackgroundResource(R.drawable.gradient)
+            centerLineImageView.setImageResource(R.drawable.ic_center_line)
         } else {
             mainFrameLayout.setBackgroundResource(R.drawable.gradient_white)
+            centerLineImageView.setImageResource(R.drawable.ic_center_line_day)
         }
 
         if (!blackTheme) {
