@@ -133,6 +133,7 @@
             android:layout_height="350dp">
 
             <TextView
+                android:id="@+id/balancedTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#fff"
@@ -146,6 +147,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:textColor="#fff"
                 android:fontFamily="@font/simplifica"
                 android:textSize="200dp"
                 android:text="00" />

@@ -178,6 +178,12 @@ class FullscreenActivity : AppCompatActivity() {
         var textColor = Color.WHITE
         var pathColor = Color.WHITE
 
+        if (blackTheme) {
+            mainFrameLayout.setBackgroundResource(R.drawable.gradient)
+        } else {
+            mainFrameLayout.setBackgroundResource(R.drawable.gradient_white)
+        }
+
         if (!blackTheme) {
             textColor = Color.BLACK
             pathColor = Color.BLACK
@@ -192,6 +198,8 @@ class FullscreenActivity : AppCompatActivity() {
         OdoValueTextView.setTextColor(textColor)
         TripATextTextView.setTextColor(textColor)
         TripAValueTextView.setTextColor(textColor)
+        kmLeftText.setTextColor(textColor)
+        balancedTextView.setTextColor(textColor)
 
         chickenImageView.setColorFilter(pathColor)
         powerConsumptionImageView.setColorFilter(pathColor)
