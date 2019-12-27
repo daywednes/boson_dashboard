@@ -18,6 +18,18 @@
         android:background="#00000000"
         android:fitsSystemWindows="true">
 
+<!--        <ProgressBar-->
+<!--            android:id="@+id/kmProgressbar"-->
+<!--            style="?android:attr/progressBarStyleHorizontal"-->
+<!--            android:layout_width="710dp"-->
+<!--            android:layout_height="710dp"-->
+<!--            android:max="100"-->
+<!--            android:progress="100"-->
+<!--            android:scaleX="-1"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:paddingTop="96dp"-->
+<!--            android:progressDrawable="@drawable/center_circular" />-->
+
         <ProgressBar
             android:id="@+id/rocketProgressBar"
             style="?android:attr/progressBarStyleHorizontal"
@@ -51,7 +63,7 @@
             android:progress="100"
             android:layout_centerInParent="true"
             android:paddingTop="96dp"
-            android:progressDrawable="@drawable/km_circular" />
+            android:progressDrawable="@drawable/kw_circular" />
 
 
         <ImageView
