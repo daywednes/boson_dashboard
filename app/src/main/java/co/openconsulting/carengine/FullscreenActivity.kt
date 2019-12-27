@@ -200,6 +200,7 @@ class FullscreenActivity : AppCompatActivity() {
         TripAValueTextView.setTextColor(textColor)
         balancedTextView.setTextColor(textColor)
         kmLeftText.setTextColor(textColor)
+        currentTempTextView.setTextColor(textColor)
 
         chickenImageView.setColorFilter(pathColor)
         powerConsumptionImageView.setColorFilter(pathColor)
