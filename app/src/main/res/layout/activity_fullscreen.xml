@@ -2,10 +2,13 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainFrameLayout"
+    android:clickable="true"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/gradient"
-    tools:context=".FullscreenActivity">
+    tools:context=".FullscreenActivity"
+    android:focusable="true">
 
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
@@ -143,7 +146,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:textColor="#fff"
                 android:fontFamily="@font/simplifica"
                 android:textSize="200dp"
                 android:text="00" />

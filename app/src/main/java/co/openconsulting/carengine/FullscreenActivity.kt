@@ -8,10 +8,11 @@ import android.graphics.Paint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.view.View
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_fullscreen.*
 import java.text.SimpleDateFormat
 import java.util.*
+
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -19,26 +20,16 @@ import java.util.*
  */
 class FullscreenActivity : AppCompatActivity() {
     private val updatePeriod = 500L //
-    private val currentDateTime = Calendar.getInstance().getTime()
-    private val currentBatteryTemp = 0
-    private val currentMotorTemp = 0
-    private val currentKmLeft = 120
-    private val currentPowerConsumption = 120
+    private var currentDateTime = Calendar.getInstance().getTime()
+    private var currentBatteryTemp = 0
+    private var currentMotorTemp = 0
+    private var currentKmLeft = 120
+    private var currentPowerConsumption = 4.5
+    private var fakeData1 = true
+    private var isBlackTheme = true
 
 
     private lateinit var updateHandler : Handler
-    //    Logic
-
-    private val mHideHandler = Handler()
-    private val mHidePart2Runnable = Runnable {
-
-    }
-    private val mShowPart2Runnable = Runnable {
-        // Delayed display of UI elements
-        supportActionBar?.show()
-    }
-    private var mVisible: Boolean = false
-    private val mHideRunnable = Runnable { hide() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +39,11 @@ class FullscreenActivity : AppCompatActivity() {
         supportActionBar?.hide()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        mVisible = true
+        // onClick set fakeData
+        // This is for demo purpose only
+        mainFrameLayout.setOnClickListener {
+            toggleFakeData()
+        }
 
         updateHandler = Handler()
         updateHandler.postDelayed({
@@ -59,6 +54,43 @@ class FullscreenActivity : AppCompatActivity() {
     // use this function to set data from outside.
     public fun setData() {
 
+    }
+
+    private fun toggleFakeData() {
+        Log.d("nxqd", "here")
+
+        if (fakeData1) {
+            toggleFakeData2()
+        } else {
+            toggleFakeData1()
+        }
+
+        updateUI()
+    }
+
+    private fun toggleFakeData1() {
+        currentBatteryTemp = 0
+        currentMotorTemp = 0
+        currentKmLeft = 120
+        currentPowerConsumption = 4.5
+        fakeData1 = true
+        changeBlackTheme(false)
+    }
+
+    private fun toggleFakeData2() {
+        currentBatteryTemp = 90
+        currentMotorTemp = 80
+        currentKmLeft = 112
+        currentPowerConsumption = -4.5
+        fakeData1 = false
+        changeBlackTheme(true)
+    }
+
+    private fun currentPowerConsumptionText(): String {
+        if (currentPowerConsumption > 0) {
+            return "+$currentPowerConsumption kW"
+        }
+        return "$currentPowerConsumption kW"
     }
 
     private fun drawLine() {
@@ -76,7 +108,7 @@ class FullscreenActivity : AppCompatActivity() {
             (canvas.height / 2).toFloat(), paint)
         drawingImageView.setImageBitmap(bitmap)
 
-        // draw curved ilne
+        // draw curved line
 //        https://stackoverflow.com/questions/27704200/how-to-draw-a-curved-line-in-android
     }
 
@@ -101,57 +133,55 @@ class FullscreenActivity : AppCompatActivity() {
         return "$temp ℃"
     }
 
+    private fun isDayTime(timeOfDay: Int) : Boolean {
+        return timeOfDay in 7..18
+    }
+
     private fun updateUI() {
+        // check current date time to change theme
+        val now = Calendar.getInstance()
+        maybeChangeTheme(now)
+
         if (isMotorIcon()) {
-            chickenImageView.setImageResource(R.drawable.ic_power_consumption)
+            chickenImageView.setImageResource(R.drawable.ic_motor)
         } else {
             chickenImageView.setImageResource(R.drawable.ic_chicken)
         }
 
         if (isBatteryIcon()) {
-            // TODO: Update with battery icon
-            rocketImage.setImageResource(R.drawable.ic_rocket)
+            rocketImage.setImageResource(R.drawable.ic_battery)
         } else {
             rocketImage.setImageResource(R.drawable.ic_rocket)
         }
 
+
         // current kmLeft
-//        kmLeftTextView.text = currentKmLeft.toString()
-//        dateTimeTextView.text = dateToString(currentDateTime)
-//        chickenTempTextView.text = currentMotorTemp.toString()
-//        rocketTempTextView.text = currentBatteryTemp.toString()
-//        powerConsumptionTextView.text = currentPowerConsumption.toString()
+        kmLeftTextView.text = currentKmLeft.toString()
+//        dateTimeTextView.text = dateToString(now)
+        chickenTempTextView.text = tempText(currentMotorTemp)
+        rocketTempTextView.text = tempText(currentBatteryTemp)
+        powerConsumptionTextView.text = currentPowerConsumptionText()
 
         // drawing
         drawLine()
     }
 
-    override fun onPostCreate(savedInstanceState: Bundle?) {
-        super.onPostCreate(savedInstanceState)
-
-        // Trigger the initial hide() shortly after the activity has been
-        // created, to briefly hint to the user that UI controls
-        // are available.
-        delayedHide(100)
+    private fun maybeChangeTheme(now: Calendar) {
+        val timeOfDay = now.get(Calendar.HOUR_OF_DAY)
+        if (isDayTime(timeOfDay) && isBlackTheme) {
+            changeBlackTheme(false)
+        }
+        if (!isDayTime(timeOfDay) && !isBlackTheme) {
+            changeBlackTheme(true)
+        }
     }
 
-    private fun hide() {
-        // Hide UI first
-//        fullscreen_content_controls.visibility = View.GONE
-        mVisible = false
-
-        // Schedule a runnable to remove the status and navigation bar after a delay
-        mHideHandler.removeCallbacks(mShowPart2Runnable)
-        mHideHandler.postDelayed(mHidePart2Runnable, UI_ANIMATION_DELAY.toLong())
-    }
-
-    /**
-     * Schedules a call to hide() in [delayMillis], canceling any
-     * previously scheduled calls.
-     */
-    private fun delayedHide(delayMillis: Int) {
-        mHideHandler.removeCallbacks(mHideRunnable)
-        mHideHandler.postDelayed(mHideRunnable, delayMillis.toLong())
+    private fun changeBlackTheme(blackTheme: Boolean) {
+        if (blackTheme) {
+//            setTheme(R.style.BlackTheme)
+        } else {
+            setTheme(R.style.WhiteTheme)
+        }
     }
 
     companion object {
