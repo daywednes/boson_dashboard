@@ -42,17 +42,17 @@
             android:paddingTop="96dp"
             android:progressDrawable="@drawable/rocket_circular" />
 
-        <ProgressBar
-            android:id="@+id/chickenProgressBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="1160dp"
-            android:layout_height="1160dp"
-            android:max="1000"
-            android:progress="50"
-            android:scaleX="-1"
-            android:layout_centerInParent="true"
-            android:paddingTop="96dp"
-            android:progressDrawable="@drawable/chicken_circular" />
+<!--        <ProgressBar-->
+<!--            android:id="@+id/chickenProgressBar"-->
+<!--            style="?android:attr/progressBarStyleHorizontal"-->
+<!--            android:layout_width="1160dp"-->
+<!--            android:layout_height="1160dp"-->
+<!--            android:max="1000"-->
+<!--            android:progress="50"-->
+<!--            android:scaleX="-1"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:paddingTop="96dp"-->
+<!--            android:progressDrawable="@drawable/chicken_circular" />-->
 
         <ProgressBar
             android:id="@+id/kwProgressBar"
@@ -101,30 +101,30 @@
                 android:text="92℃" />
         </RelativeLayout>
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:id="@+id/layout1"
-            android:layout_width="70dp"
-            android:layout_height="320dp"
-            android:layout_marginEnd="210dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"
-            android:gravity="center_horizontal">
-            <ImageView
-                android:id="@+id/chickenImageView"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:contentDescription="@string/chicken"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/ic_motor" />
+<!--        <LinearLayout-->
+<!--            android:orientation="vertical"-->
+<!--            android:id="@+id/layout1"-->
+<!--            android:layout_width="70dp"-->
+<!--            android:layout_height="320dp"-->
+<!--            android:layout_marginEnd="210dp"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:gravity="center_horizontal">-->
+<!--            <ImageView-->
+<!--                android:id="@+id/chickenImageView"-->
+<!--                android:layout_width="32dp"-->
+<!--                android:layout_height="32dp"-->
+<!--                android:contentDescription="@string/chicken"-->
+<!--                android:layout_marginBottom="5dp"-->
+<!--                android:src="@drawable/ic_motor" />-->
 
-            <TextView
-                android:id="@+id/chickenTempTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="122℃"
-                android:textColor="#fff" />
-        </LinearLayout>
+<!--            <TextView-->
+<!--                android:id="@+id/chickenTempTextView"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="122℃"-->
+<!--                android:textColor="#fff" />-->
+<!--        </LinearLayout>-->
 
         <ImageView
             android:id="@+id/topLineImageView"
@@ -163,7 +163,7 @@
                 android:layout_height="40dp"
                 android:contentDescription="@string/chicken"
                 android:layout_centerInParent="true"
-                android:src="@drawable/ic_power_consumption" />
+                android:src="@drawable/ic_motor" />
 
             <TextView
                 android:id="@+id/powerConsumptionTextView"
@@ -179,16 +179,6 @@
             android:layout_centerInParent="true"
             android:layout_width="500dp"
             android:layout_height="350dp">
-
-            <TextView
-                android:id="@+id/balancedTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#fff"
-                android:textSize="20dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:text="BALANCED" />
 
             <TextView
                 android:id="@+id/kmLeftTextView"
@@ -208,53 +198,10 @@
                 android:textSize="20dp"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:text="km/h" />
+                android:text="km" />
 
 
         </RelativeLayout>
-
-        <GridLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:paddingBottom="150dp"
-            >
-            <TextView
-                android:id="@+id/OdoTextTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#fff"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:paddingRight="5dp"
-                android:text="Odo" />
-            <TextView
-                android:id="@+id/OdoValueTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#fff"
-                android:layout_row="0"
-                android:layout_column="1"
-                android:text="12,534 km" />
-            <TextView
-                android:id="@+id/TripATextTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#fff"
-                android:layout_row="1"
-                android:layout_column="0"
-                android:paddingRight="5dp"
-                android:text="Trip A" />
-            <TextView
-                android:id="@+id/TripAValueTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#fff"
-                android:layout_row="1"
-                android:layout_column="1"
-                android:text="72.7 km" />
-        </GridLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -279,58 +226,58 @@
         </LinearLayout>
 
 
-        <LinearLayout
-            android:id="@+id/bottomStack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="bottom"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:paddingBottom="10dp"
-            android:orientation="horizontal">
+<!--        <LinearLayout-->
+<!--            android:id="@+id/bottomStack"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="bottom"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:paddingBottom="10dp"-->
+<!--            android:orientation="horizontal">-->
 
-            <ImageView
-                android:id="@+id/bottom1"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="14dp"
-                android:src="@drawable/ic_bottom_1" />
+<!--            <ImageView-->
+<!--                android:id="@+id/bottom1"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_marginEnd="14dp"-->
+<!--                android:src="@drawable/ic_bottom_1" />-->
 
-            <ImageView
-                android:id="@+id/bottom2"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="14dp"
-                android:src="@drawable/ic_bottom_2" />
+<!--            <ImageView-->
+<!--                android:id="@+id/bottom2"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_marginEnd="14dp"-->
+<!--                android:src="@drawable/ic_bottom_2" />-->
 
-            <ImageView
-                android:id="@+id/bottom3"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="14dp"
-                android:src="@drawable/ic_bottom_3" />
+<!--            <ImageView-->
+<!--                android:id="@+id/bottom3"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_marginEnd="14dp"-->
+<!--                android:src="@drawable/ic_bottom_3" />-->
 
-            <ImageView
-                android:id="@+id/bottom4"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="14dp"
-                android:src="@drawable/ic_bottom_4" />
+<!--            <ImageView-->
+<!--                android:id="@+id/bottom4"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_marginEnd="14dp"-->
+<!--                android:src="@drawable/ic_bottom_4" />-->
 
-            <ImageView
-                android:id="@+id/bottom5"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="14dp"
-                android:src="@drawable/ic_bottom_5" />
+<!--            <ImageView-->
+<!--                android:id="@+id/bottom5"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_marginEnd="14dp"-->
+<!--                android:src="@drawable/ic_bottom_5" />-->
 
-            <ImageView
-                android:id="@+id/bottom6"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="14dp"
-                android:src="@drawable/ic_bottom_6" />
-        </LinearLayout>
+<!--            <ImageView-->
+<!--                android:id="@+id/bottom6"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_marginEnd="14dp"-->
+<!--                android:src="@drawable/ic_bottom_6" />-->
+<!--        </LinearLayout>-->
 
     </RelativeLayout>
 

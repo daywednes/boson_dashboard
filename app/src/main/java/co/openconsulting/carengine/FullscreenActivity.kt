@@ -76,7 +76,7 @@ class FullscreenActivity : AppCompatActivity() {
         changeBlackTheme(false)
 
         kwProgressBar.progress = 50
-        chickenProgressBar.progress = 50
+//        chickenProgressBar.progress = 50
         rocketProgressBar.progress = 50
     }
 
@@ -89,7 +89,7 @@ class FullscreenActivity : AppCompatActivity() {
         changeBlackTheme(true)
 
         kwProgressBar.progress = 100
-        chickenProgressBar.progress = 100
+//        chickenProgressBar.progress = 100
         rocketProgressBar.progress = 100
     }
 
@@ -141,7 +141,7 @@ class FullscreenActivity : AppCompatActivity() {
         // current kmLeft
         kmLeftTextView.text = currentKmLeft.toString()
 //        dateTimeTextView.text = dateToString(now)
-        chickenTempTextView.text = tempText(currentMotorTemp)
+//        chickenTempTextView.text = tempText(currentMotorTemp)
         rocketTempTextView.text = tempText(currentBatteryTemp)
         powerConsumptionTextView.text = currentPowerConsumptionText()
     }
@@ -173,24 +173,24 @@ class FullscreenActivity : AppCompatActivity() {
             pathColor = Color.BLACK
         }
 
-        chickenTempTextView.setTextColor(textColor)
+//        chickenTempTextView.setTextColor(textColor)
         rocketTempTextView.setTextColor(textColor)
         dateTimeTextView.setTextColor(textColor)
         kmLeftTextView.setTextColor(textColor)
         powerConsumptionTextView.setTextColor(textColor)
-        OdoTextTextView.setTextColor(textColor)
-        OdoValueTextView.setTextColor(textColor)
-        TripATextTextView.setTextColor(textColor)
-        TripAValueTextView.setTextColor(textColor)
-        balancedTextView.setTextColor(textColor)
+//        OdoTextTextView.setTextColor(textColor)
+//        OdoValueTextView.setTextColor(textColor)
+//        TripATextTextView.setTextColor(textColor)
+//        TripAValueTextView.setTextColor(textColor)
+//        balancedTextView.setTextColor(textColor)
         kmLeftText.setTextColor(textColor)
         currentTempTextView.setTextColor(textColor)
 
-        chickenImageView.setColorFilter(pathColor)
+//        chickenImageView.setColorFilter(pathColor)
         powerConsumptionImageView.setColorFilter(pathColor)
         rocketImage.setColorFilter(pathColor)
 
-        chickenProgressBar.progressTintList = ColorStateList.valueOf(pathColor)
+//        chickenProgressBar.progressTintList = ColorStateList.valueOf(pathColor)
         rocketProgressBar.progressTintList = ColorStateList.valueOf(pathColor)
         kwProgressBar.progressTintList = ColorStateList.valueOf(pathColor)
     }
