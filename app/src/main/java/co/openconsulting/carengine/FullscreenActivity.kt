@@ -189,6 +189,8 @@ class FullscreenActivity : AppCompatActivity() {
 //        chickenImageView.setColorFilter(pathColor)
         powerConsumptionImageView.setColorFilter(pathColor)
         rocketImage.setColorFilter(pathColor)
+        bottom1new.setColorFilter(pathColor)
+
 
 //        chickenProgressBar.progressTintList = ColorStateList.valueOf(pathColor)
         rocketProgressBar.progressTintList = ColorStateList.valueOf(pathColor)
