@@ -98,6 +98,7 @@
                 android:textColor="#fff"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
+                android:textSize="20dp"
                 android:text="92℃" />
         </RelativeLayout>
 
@@ -159,8 +160,8 @@
 
             <ImageView
                 android:id="@+id/powerConsumptionImageView"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:contentDescription="@string/chicken"
                 android:layout_centerInParent="true"
                 android:src="@drawable/ic_motor" />
@@ -172,6 +173,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:text="+3.2kW"
+                android:textSize="20dp"
                 android:textColor="#fff" />
         </RelativeLayout>
 
@@ -216,12 +218,14 @@
                 android:layout_height="wrap_content"
                 android:textColor="#fff"
                 android:layout_marginEnd="10dp"
+                android:textSize="20dp"
                 android:text="10 ℃" />
             <TextView
                 android:id="@+id/dateTimeTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#fff"
+                android:textSize="20dp"
                 android:text="12:24 PM" />
         </LinearLayout>
 
