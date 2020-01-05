@@ -35,7 +35,7 @@
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="1160dp"
             android:layout_height="1160dp"
-            android:max="1000"
+            android:max="470"
             android:progress="100"
             android:scaleX="-1"
             android:layout_centerInParent="true"
@@ -75,19 +75,17 @@
         <RelativeLayout
             android:orientation="vertical"
             android:id="@+id/layout2"
-            android:layout_width="50dp"
-            android:layout_height="330dp"
-            android:layout_marginEnd="200dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="170dp"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true">
 
             <ImageView
                 android:id="@+id/rocketImage"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="25dp"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_centerInParent="true"
                 android:contentDescription="@string/chicken"
                 android:src="@drawable/ic_battery" />
 
