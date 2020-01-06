@@ -41,6 +41,7 @@ class FullscreenActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         // onClick set fakeData
         // This is for demo purpose only
         mainFrameLayout.setOnClickListener {
@@ -95,9 +96,9 @@ class FullscreenActivity : AppCompatActivity() {
 
     private fun currentPowerConsumptionText(): String {
         if (currentPowerConsumption > 0) {
-            return "+$currentPowerConsumption kW"
+            return "+$currentPowerConsumption ℃"
         }
-        return "$currentPowerConsumption kW"
+        return "$currentPowerConsumption ℃"
     }
 
     private fun drawLine() {

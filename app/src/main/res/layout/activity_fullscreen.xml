@@ -75,16 +75,16 @@
         <RelativeLayout
             android:orientation="vertical"
             android:id="@+id/layout2"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginEnd="170dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="150dp"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true">
 
             <ImageView
                 android:id="@+id/rocketImage"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_centerInParent="true"
                 android:contentDescription="@string/chicken"
                 android:src="@drawable/ic_battery" />
@@ -96,7 +96,7 @@
                 android:textColor="#fff"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:textSize="20dp"
+                android:textSize="28dp"
                 android:text="92℃" />
         </RelativeLayout>
 
@@ -151,10 +151,10 @@
             android:src="@drawable/ic_center_line" />
 
         <RelativeLayout
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_centerVertical="true"
-            android:layout_marginStart="160dp">
+            android:layout_marginStart="140dp">
 
             <ImageView
                 android:id="@+id/powerConsumptionImageView"
@@ -171,7 +171,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:text="+3.2kW"
-                android:textSize="20dp"
+                android:textSize="28dp"
                 android:textColor="#fff" />
         </RelativeLayout>
 
@@ -195,7 +195,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#fff"
-                android:textSize="20dp"
+                android:textSize="50dp"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:text="km" />
