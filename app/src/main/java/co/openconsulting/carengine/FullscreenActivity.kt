@@ -11,7 +11,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_fullscreen.*
-import kotlinx.android.synthetic.main.activity_splash.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -42,13 +41,11 @@ class FullscreenActivity : AppCompatActivity() {
         supportActionBar?.hide()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        // onClick set fakeData
-        // This is for demo purpose only
+
         mainFrameLayout.setOnClickListener {
             toggleFakeData()
         }
 
-        // TODO: Remove this
 
         updateHandler = Handler()
         updateHandler.postDelayed({
@@ -77,7 +74,6 @@ class FullscreenActivity : AppCompatActivity() {
         changeBlackTheme(false)
 
         kwProgressBar.progress = 50
-//        chickenProgressBar.progress = 50
         rocketProgressBar.progress = 50
     }
 
@@ -90,7 +86,6 @@ class FullscreenActivity : AppCompatActivity() {
         changeBlackTheme(true)
 
         kwProgressBar.progress = 100
-//        chickenProgressBar.progress = 100
         rocketProgressBar.progress = 100
     }
 
@@ -116,8 +111,6 @@ class FullscreenActivity : AppCompatActivity() {
             (canvas.height / 2).toFloat(), paint)
         drawingImageView.setImageBitmap(bitmap)
 
-        // draw curved line
-//        https://stackoverflow.com/questions/27704200/how-to-draw-a-curved-line-in-android
     }
 
     @SuppressLint("SimpleDateFormat")
@@ -135,14 +128,10 @@ class FullscreenActivity : AppCompatActivity() {
     }
 
     private fun updateUI() {
-        // check current date time to change theme
         val now = Calendar.getInstance()
-//        maybeChangeTheme(now)
 
-        // current kmLeft
         kmLeftTextView.text = currentKmLeft.toString()
-//        dateTimeTextView.text = dateToString(now)
-//        chickenTempTextView.text = tempText(currentMotorTemp)
+
         rocketTempTextView.text = tempText(currentBatteryTemp)
         powerConsumptionTextView.text = currentPowerConsumptionText()
     }
@@ -174,26 +163,17 @@ class FullscreenActivity : AppCompatActivity() {
             pathColor = Color.BLACK
         }
 
-//        chickenTempTextView.setTextColor(textColor)
         rocketTempTextView.setTextColor(textColor)
         dateTimeTextView.setTextColor(textColor)
         kmLeftTextView.setTextColor(textColor)
         powerConsumptionTextView.setTextColor(textColor)
-//        OdoTextTextView.setTextColor(textColor)
-//        OdoValueTextView.setTextColor(textColor)
-//        TripATextTextView.setTextColor(textColor)
-//        TripAValueTextView.setTextColor(textColor)
-//        balancedTextView.setTextColor(textColor)
         kmLeftText.setTextColor(textColor)
         currentTempTextView.setTextColor(textColor)
 
-//        chickenImageView.setColorFilter(pathColor)
         powerConsumptionImageView.setColorFilter(pathColor)
         rocketImage.setColorFilter(pathColor)
         bottom1new.setColorFilter(pathColor)
 
-
-//        chickenProgressBar.progressTintList = ColorStateList.valueOf(pathColor)
         rocketProgressBar.progressTintList = ColorStateList.valueOf(pathColor)
         kwProgressBar.progressTintList = ColorStateList.valueOf(pathColor)
     }
